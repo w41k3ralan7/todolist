@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  display: flex;
+  padding: 0 20% 0 20%;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all .3s ease-in-out;
+}
+
+.theme {
+  cursor: pointer;
+  box-shadow: rgba(231, 210, 91, 0.56) 0px 22px 70px 4px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 150px;
+  height: 65%;
+  padding: 0 10px 0 10px;
+  border: none;
+  filter: invert(.3);
+  transition: all .4s ease-in-out;
+  background: rgb(28, 139, 241);
+}
+
+.sunmoon {
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(255, 255, 89);
+  background: rgb(255, 244, 83);
+  border-radius: 50px;
+  box-shadow: rgb(255, 242, 139) 0px 22px 70px 10px;
+  transition: all .4s ease-in-out;
+}
+
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  border: 2px solid rgb(74, 73, 73);
+  border-radius: 25px;
+  height: 70%;
+  width: 50%;
+  padding: 0 1% 1% 1%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: rgba(245, 148, 57, 0.1) 0px 1px 1px 0px inset, rgba(75, 206, 218, 0.1) 0px 50px 100px -20px, rgba(75, 206, 218, 0.1) 0px 30px 60px -30px;
+  transition: all .3s ease-in-out;
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5% 0 5%;
+  height: 15%;
+  width: 104%;
+  color: rgb(101, 101, 101);
+  transform: translateX(-2%);
+  background: transparent;
+  font-family: 'PT Sans', sans-serif;
+  box-shadow: rgba(202, 180, 180, 0.45) 0px 25px 20px -20px;
+  transition: all .3s ease-in-out;
+}
+
+h1 {
+  background: transparent;
+  transition: all .3s ease-in-out;
+}
+
+#add {
+  cursor: pointer;
+  width: 5%;
+  height: 50%;
+  padding: 2%;
+  margin: 2%;
+  filter: invert(.3);
+  transition: all .1s ease-in-out;
+  border: none;
+  background: url('add.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all .3s ease-in-out;
+}
+
+#list {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1%;
+  transition: all .3s ease-in-out;
+}
+
+#task {
+  width: 100%;
+  border: 2px solid rgb(175, 175, 175);
+  display: flex;
+  background-color: transparent;
+  flex-direction: row;
+  padding: 1%;
+  margin: 2% 0 2% 0;
+  border-radius: 25px;
+  box-shadow: rgba(75, 206, 218, 0.1) 0px 1px 1px 0px inset, rgba(75, 206, 218, 0.1) 0px 50px 100px -20px, rgba(75, 206, 218, 0.1) 0px 30px 60px -30px;
+  transition: all .3s ease-in-out;
+}
+
+#input {
+  width: 90%;
+  height: max-content;
+  padding: 2%;
+  font-size: 180%;
+  outline: none;
+  border: none;
+  background: transparent;
+  word-wrap: break-word;
+  font-family: 'PT Sans', sans-serif;
+  color: rgb(47, 94, 135);
+  transition: all .3s ease-in-out;
+}
+
+#options {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  transition: all .3s ease-in-out;
+}
+
+#del,
+#clr {
+  cursor: pointer;
+  filter: drop-shadow(rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px);
+  width: 50%;
+  height: 100%;
+  padding: 2%;
+  margin: 2%;
+  border: none;
+  filter: invert(.3);
+  transition: all .1s ease-in-out;
+}
+
+#del {
+  background: url('delete.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#clr {
+  background: url('broom.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+#del:hover,
+#clr:hover,
+#add:hover {
+  filter: invert(.4);
+  transform: scale(1.2);
+}
+
+#del:active,
+#clr:active,
+#add:active {
+  filter: invert(.4);
+  transform: scale(.7);
+}
+
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 80%;
+  }
+
+  #nav {
+    padding: 0 2% 0 2%;
+  }
+
+  #add {
+    width: 10%;
+  }
+}
